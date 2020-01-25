@@ -27,7 +27,6 @@ public class Main {
                 }
             }
             avg.add((count / n) * 100);
-
         }
 
         for (int i = 0; i < c; i++) {
