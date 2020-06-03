@@ -15,7 +15,8 @@
 - 각 전화번호의 길이는 1 이상 20 이하입니다.
 
 ## 입출력 예
-   ![모의고사문제](https://user-images.githubusercontent.com/25001697/81533318-f43e5e80-93a0-11ea-88e9-3140f06943a8.png)
+   ![전화번호목록](https://user-images.githubusercontent.com/25001697/83632118-a7355d00-a5d9-11ea-93b2-336187c12fa1.png)
+
   
 ## 입출력 예 설명
 ### 입출력 예 #1
