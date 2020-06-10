@@ -10,8 +10,4 @@ def solution(number, k):
     answer = ''.join(collected)
     return answer
 
-number = "4177252841"
-k = 4
-
-print(solution(number, k))
 
