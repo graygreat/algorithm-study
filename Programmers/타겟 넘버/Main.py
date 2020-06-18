@@ -9,8 +9,9 @@ def solution(numbers, target):
             sub.append(sup + num)
             sub.append(sup - num)
         super = sub
+        print(super)
         answer = super.count(target)
     return answer
 
 
-print(solution([1, 1, 1, 1, 1], 3))
+print(solution([1, 2, 3, 4, 5], 3))
