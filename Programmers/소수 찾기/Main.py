@@ -1,25 +1,26 @@
 # 출처 : https://programmers.co.kr/learn/courses/30/lessons/42839
-from itertools import combinations
+from itertools import permutations
 import math
-def check(n):
-    k = math.sqrt(n)
+
+def check(num):
+    n = math.sqrt(num)
+
     if n < 2:
         return False
 
-    for i in range(2, int(k) + 1):
-        if n % i == 0:
+    for i in range(2, int(n) + 1):
+        if num % i == 0:
             return False
     return True
-
-
 def solution(numbers):
-    arr = []
-    comArr = []
+    answer = []
     for i in range(1, len(numbers) + 1):
-        arr.append(list(map(''.join, combinations(numbers, i))))
+        arr = list(map(''.join, permutations(numbers, i)))
+        for j in list(set(arr)):
+            if(check(int(j))):
+                answer.append(int(j))
+    answer = len(set(answer))
 
-    for i in range(len(arr)):
-        comArr += arr[i]
-    return comArr
+    return answer
 
 print(solution("011"))
