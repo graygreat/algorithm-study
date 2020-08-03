@@ -1,27 +1,29 @@
 # 출처 : https://www.acmicpc.net/problem/3020
 import sys
-bottom = []
-top = []
-countArr = []
 
 N, H = map(int, sys.stdin.readline().split())
+bottom = [0] * (H + 1)
+top = [0] * (H + 1)
+countArr = []
+
 for i in range(N):
     num = int(sys.stdin.readline().rstrip())
     if i % 2 == 0:
-        bottom.append(num)
+        bottom[num] += 1
     else:
-        top.append(num)
+        top[H - num + 1] += 1
 
-for i in range(H):
-    count = 0
-    for j in range(N // 2):
-        if bottom[j] >= i + 1:
-            count += 1
-        if H - top[j] <= i:
-            count += 1
-    countArr.append(count)
+# bottom total
+for i in range(H, 0, -1):
+    bottom[i - 1] += bottom[i]
 
-minNum = min(countArr)
+# top total
+for i in range(2, H + 1):
+    top[i] += top[i - 1]
 
-print(minNum, countArr.count(minNum))
-# print(bottom, top)
+for i in range(H + 1):
+    countArr.append(bottom[i] + top[i])
+
+countArr = countArr[1:]
+mimArr = min(countArr)
+print(mimArr, countArr.count(mimArr))
