@@ -1,14 +1,16 @@
 # 출처 : https://programmers.co.kr/learn/courses/30/lessons/42578
+import collections
 def solution(clothes):
+    clothes = dict(clothes)
     answer = len(clothes)
-    length = len(clothes)
+    result = 1
+    arr = list(collections.Counter(clothes.values()).values())
 
-    for _ in range(length):
-        for i in range(1, length):
-            if clothes[0][1] != clothes[i][1]:
-                answer += 1
-        clothes.pop(0)
-        length -= 1
+    for a in arr:
+        result *= a
+    return answer + result
+
     return answer
 
 print(solution([["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]))
+print(solution([["crow_mask", "face"], ["blue_sunglasses", "face"], ["smoky_makeup", "face"]]))
