@@ -11,4 +11,4 @@ def solution(name):
             answer += (ord(name[i]) - 65)
         # print(i, answer)
     return answer + len(name) - 1
-print(solution("JAN"))
+print(solution("JANA"))
