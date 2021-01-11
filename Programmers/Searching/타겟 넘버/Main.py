@@ -1,17 +1,22 @@
 # 출처 : https://programmers.co.kr/learn/courses/30/lessons/43165
 
+answer = 0
 def solution(numbers, target):
-    answer = 0
-    super = [0]
-    for num in numbers:
-        sub = []
-        for sup in super:
-            sub.append(sup + num)
-            sub.append(sup - num)
-        super = sub
-        print(super)
-        answer = super.count(target)
+    global answer
+    
+    numberLength = len(numbers) 
+
+    def dfs(length, value):
+        global answer
+        if length == numberLength:
+            if target == value:
+                answer += 1
+                return
+            return
+        dfs(length + 1, value + numbers[length])
+        dfs(length + 1, value - numbers[length])
+
+    dfs(0, 0)
     return answer
 
-
-print(solution([1, 2, 3, 4, 5], 3))
+print(solution([1, 1, 1, 1, 1], 3))
