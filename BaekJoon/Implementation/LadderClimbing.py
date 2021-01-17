@@ -35,7 +35,10 @@ result = ""
 for i in range(k - 1):
     if alphabet[i] == order_result[i]:
         result += '*'
-    else:
+    elif alphabet[i] == order_result[i + 1]:
         result += '-'
         swap(alphabet, i)
+    else:
+        result = 'x' * (k - 1)
+        break  
 print(result)
