@@ -1,6 +1,2 @@
-from itertools import product
-
-data = ['A', 'B', 'C']
-
-result = list(product(data, repeat=2))
-print(result)
+# test 2
+print("맥북 산 기념 commit")
