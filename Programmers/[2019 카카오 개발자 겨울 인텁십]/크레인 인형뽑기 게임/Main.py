@@ -1,3 +1,5 @@
+import sys
+
 from collections import deque
 
 def solution(board, moves):
@@ -13,7 +15,9 @@ def solution(board, moves):
             if previous == doll:
                 storage.pop()
                 count += 2
-                previous = storage[-1]
+                if storage:
+                    previous = storage[-1]
+                board[i][move - 1] = 0
                 break
             if doll:
                 storage.append(doll)
