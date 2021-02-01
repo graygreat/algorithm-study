@@ -1,5 +1,6 @@
 # https://programmers.co.kr/learn/courses/30/lessons/60058
 
+# 균형잡힌 괄호 검사
 def find_balanced_index(data_set):
     count = 0
     for i in range(len(data_set)):
@@ -10,6 +11,7 @@ def find_balanced_index(data_set):
         if count == 0:
             return i
 
+# 올바른 괄호 검사
 def proper_check(data_set):
     stack = []
     for data in data_set:
@@ -22,6 +24,7 @@ def proper_check(data_set):
                 return False
     return True
 
+# 문자열 뒤집기
 def reserve(data_set):
     array = []
     for data in data_set:
@@ -36,13 +39,12 @@ def solution(p):
     if p == '':
         return answer
         
-    index = find_balanced_index(p)
+    index = find_balanced_index(p)  # 균형잡힌 괄호를 기준으로 슬라이싱
     u = p[:index + 1]
     v = p[index + 1:]
     
     if proper_check(u):
         return u + solution(v)
-
     else:
         answer = '('
         answer += solution(v)
