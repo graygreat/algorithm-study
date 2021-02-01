@@ -9,8 +9,6 @@ init_data[0] = max_data = data_set[0]
 
 for i in range(1, n):
     data = init_data[i - 1] + data_set[i]
-    if data < 0:
-        init_data[i] = data
     if data > data_set[i]:
         init_data[i] = data
         max_data = data
