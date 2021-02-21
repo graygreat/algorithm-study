@@ -11,7 +11,6 @@ for _ in range(t):
     for i in range(4, n + 1):
         dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3]
     
-    # print(dp)
     print(dp[n])
 
    
