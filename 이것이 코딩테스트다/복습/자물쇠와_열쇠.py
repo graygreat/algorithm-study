@@ -44,3 +44,4 @@ def solution(key, lock):
     return False
 
 print(solution([[0, 0, 0], [1, 0, 0], [0, 1, 1]], [[1, 1, 1], [1, 1, 0], [1, 0, 1]]))
+6895127401
