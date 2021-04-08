@@ -6,25 +6,14 @@ class Solution {
         System.out.println(solution.solution(10));
     }
     public String solution(int n) {
-        String waterMelon = "수박";
         StringBuilder answer = new StringBuilder();
-        if (n == 1) {
-            return "수";
-        }
-        if (n == 2) {
-            return "수박";
-        }
-        int nByDivide = n / 2;
-        if (n % 2 == 0) {
-            for (int i = 0; i < nByDivide; i++) {
-                answer.append(waterMelon);
-            }
-            return answer.toString();
-        }
         for (int i = 0; i < n; i++) {
-            answer.append(waterMelon);
+            if (i % 2 == 0) {
+                answer.append("수");
+                continue;
+            }
+            answer.append("박");
         }
-        answer.append("수");
         return answer.toString();
     }
 }
