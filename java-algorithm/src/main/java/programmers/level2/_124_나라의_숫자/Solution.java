@@ -1,4 +1,4 @@
-package programmers.level2;
+package programmers.level2._124_나라의_숫자;
 
 class Solution {
     public static void main(String[] args) {
