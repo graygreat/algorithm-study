@@ -1,4 +1,4 @@
-package etc.godOfJava.chpater12;
+package etc.godOfJava.chapter12;
 
 import java.util.Objects;
 
