@@ -17,6 +17,8 @@ public class Main {
         String data2 = br.readLine();
         Map<Character, Integer> map = new HashMap<>();
 
+
+
         for (char data : data1.toCharArray()) {
             map.put(data, map.getOrDefault(data, 0) + 1);
         }

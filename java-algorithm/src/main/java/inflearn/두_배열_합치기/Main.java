@@ -22,7 +22,8 @@ public class Main {
         int[] inputData2 = Arrays.asList(br.readLine().split(" ")).stream()
                 .mapToInt(Integer::parseInt).toArray();
 
-        List<Integer> answer = new ArrayList<>();
+        List<Integer> answer
+                = new ArrayList<>();
         int fi = 0;
         int si = 0;
 

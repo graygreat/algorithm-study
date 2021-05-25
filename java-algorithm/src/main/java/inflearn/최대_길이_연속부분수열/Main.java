@@ -6,8 +6,9 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
+        Main main = new Main();
+        System.out.println(main.solution());
     }
 
     public int solution() throws IOException {
@@ -19,6 +20,21 @@ public class Main {
         int[] inputData = Arrays.asList(br.readLine().split(" ")).stream()
                 .mapToInt(Integer::parseInt).toArray();
 
-        return 0;
+        int count = 0;
+        int pi, pj = 0;
+        int answer = 0;
+        for (pi = 0; pi < n; pi++) {
+            if (inputData[pi] == 0) {
+                count += 1;
+            }
+            while (count > k) {
+                if (inputData[pj] == 0) {
+                    count -= 1;
+                }
+                pj += 1;
+            }
+            answer = Math.max(answer, pi - pj + 1);
+        }
+        return answer;
     }
 }
