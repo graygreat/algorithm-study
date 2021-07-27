@@ -3,33 +3,28 @@ package 이것이코딩테스트다.greedy.문자열_뒤집기;
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
         Main main = new Main();
         System.out.println(main.solution());
     }
 
-    private int solution() {
-        String dataSet = scanner.next();
-        int count0 = 0;
-        int count1 = 0;
+    public int solution() {
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.next();
+        int zeroCount = 0;
+        int oneCount = 0;
+        char flag = s.charAt(0);
 
-        if (dataSet.charAt(0) == '1') {
-            count0++;
-        } else {
-            count1++;
-        }
-
-        for (int i = 0; i < dataSet.length() - 1; i++) {
-            if (dataSet.charAt(i) != dataSet.charAt(i + 1)) {
-                if (dataSet.charAt(i + 1) == '1') {
-                    count0++;
-                } else {
-                    count1++;
-                }
+        for (char c : s.toCharArray()) {
+            if (flag == '1' && c == '0') {
+                flag = '0';
+                zeroCount += 1;
+            } else if (flag == '0' && c == '1'){
+                flag = '1';
+                oneCount += 1;
             }
         }
-        return Math.min(count0, count1);
+
+        return Math.min(zeroCount, oneCount);
     }
 }
