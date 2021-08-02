@@ -3,30 +3,30 @@ package 이것이코딩테스트다.greedy.만들_수_없는_금액;
 import java.util.*;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
         Main main = new Main();
         System.out.println(main.solution());
     }
 
-    private int solution() {
+    public int solution() {
+        Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        List<Integer> arrayList = new ArrayList<>();
+        int[] array = new int[n];
 
         for (int i = 0; i < n; i++) {
-            arrayList.add(scanner.nextInt());
+            array[i] = scanner.nextInt();
         }
 
-        Collections.sort(arrayList, Comparator.reverseOrder());
-
+        Arrays.sort(array);
         int target = 1;
-        for (int i = 0; i < n; i++) {
-            if (target < arrayList.get(i)) {
+
+        for (int i : array) {
+            if (target < i) {
                 break;
             }
-            target += arrayList.get(i);
+            target += i;
         }
+
         return target;
     }
 }

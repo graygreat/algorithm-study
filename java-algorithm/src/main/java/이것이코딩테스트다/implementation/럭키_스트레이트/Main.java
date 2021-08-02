@@ -4,28 +4,31 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
         Main main = new Main();
         System.out.println(main.solution());
     }
+
     public String solution() {
-        String n = scanner.next();
-        int halfOfLength = n.length() / 2;
-        int summary = 0;
+        Scanner scanner = new Scanner(System.in);
+        String num = scanner.next();
+        int length = num.length();
+        int sum = 0;
 
-        for (int i = 0; i < halfOfLength; i++) {
-            summary += n.charAt(i);
+        for (int i = 0; i < length / 2; i++) {
+            sum += num.charAt(i) - '0';
         }
 
-        for (int i = halfOfLength; i < n.length(); i++) {
-            summary -= n.charAt(i);
+        for (int i = length / 2; i < length; i++) {
+            sum -= num.charAt(i) - '0';
+            if (sum < 0) {
+                return "READY";
+            }
         }
-
-        if (summary == 0) {
+        if (sum == 0) {
             return "LUCKY";
+        } else {
+            return "READY";
         }
-        return "READY";
     }
 }
